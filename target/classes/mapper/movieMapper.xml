@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exh.movie.dao.MovieDao">
+    <select id="selectList" resultType="com.exh.movie.entity.Movie">
+        select movieID,title,genres
+        from movie
+
+    </select>
+
+    <select id="selectOne" resultType="com.exh.movie.entity.Movie">
+        select movieID,title,genres
+        from movie
+        where title = #{title}
+    </select>
+    <insert id="insertOne" parameterType="com.exh.movie.entity.Movie">
+        insert into movie values (#{movieID}, #{title}, #{genres})
+    </insert>
+    <update id="updateOne" parameterType="com.exh.movie.entity.Movie">
+        update movie set title = #{title}, genres = #{genres}
+        where movieID = #{movieID}
+    </update>
+    <delete id="deleteOne" parameterType="int">
+        delete from movie where movieID = #{movieID}
+    </delete>
+
+</mapper>

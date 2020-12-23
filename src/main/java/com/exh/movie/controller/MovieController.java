@@ -19,6 +19,7 @@ public class MovieController {
 
     @RequestMapping("retrieve.do")
     public Movie retrieve(@RequestParam("keyWord") String keyWord){
+
         return service.SelectOne(keyWord);//(现在连接了数据库)以后用于连接Spark
     }
 

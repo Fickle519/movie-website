@@ -42,6 +42,8 @@ public class RatingController {
     @RequestMapping("AvgScoreBySexAndType.do")
     @ResponseBody
     public String AvgScoreBySexAndType(@RequestParam("type") String genres,@RequestParam("gender") String gender){
+        spark18_mysql2 sm = new spark18_mysql2();
+        sm.spark_sql(gender, gender);
         return  "{\"type\"variable : 4.2}";
     }
 
